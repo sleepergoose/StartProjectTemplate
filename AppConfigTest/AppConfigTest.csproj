@@ -9,7 +9,6 @@
     <Folder Include="Infrastructure\" />
     <Folder Include="Components\" />
     <Folder Include="Models\ViewModels\" />
-    <Folder Include="Views\Home\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
