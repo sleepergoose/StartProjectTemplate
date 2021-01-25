@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 
+
+
 namespace AppConfigTest
 {
     public class Startup
@@ -33,7 +35,8 @@ namespace AppConfigTest
                 app.UseStatusCodePages();
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvcWithDefaultRoute();
+            app.UseStaticFiles();
+            app.UseMvc();
         }
     }
 }
