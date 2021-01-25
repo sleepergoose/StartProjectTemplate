@@ -8,6 +8,8 @@ using AppConfigTest.Models;
 
 namespace AppConfigTest.Controllers
 {
+
+    [Route("app/[controller]/actions/[action]/{id:weekday?}")]
     public class CustomerController : Controller
     {
         public IActionResult Index() => View("Result", new Result

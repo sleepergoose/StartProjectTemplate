@@ -15,5 +15,15 @@ namespace AppConfigTest.Controllers
             Controller = nameof(HomeController),
             Action = nameof(Index)
         });
+
+        public IActionResult CustomVariable(string id)
+        {
+            Result r = new Result { Controller = nameof(HomeController), Action = nameof(Index) };
+            r.Data["id"] = id ?? "<no value>"; // RouteData.Values["id"];
+
+            r.Data["catchall"] = RouteData.Values["catchall"];
+
+            return View("Result", r);
+        }
     }
 }
