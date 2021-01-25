@@ -22,7 +22,7 @@ namespace AppConfigTest.Controllers
             r.Data["id"] = id ?? "<no value>"; // RouteData.Values["id"];
 
             r.Data["catchall"] = RouteData.Values["catchall"];
-
+            r.Data["url"] = Url.Action("Index", "Admin");
             return View("Result", r);
         }
     }

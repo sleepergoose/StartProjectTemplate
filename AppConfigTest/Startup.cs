@@ -26,7 +26,9 @@ namespace AppConfigTest
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<RouteOptions>(options => options.ConstraintMap.Add("weekday", typeof(WeekDayConstraint)));
+            services.Configure<RouteOptions>(options => 
+                options.ConstraintMap.Add("weekday", typeof(WeekDayConstraint)));
+           
             services.AddMvc(prop => prop.EnableEndpointRouting = false);
         }
 
@@ -39,7 +41,15 @@ namespace AppConfigTest
             }
             app.UseStaticFiles();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes => {
+                routes.MapRoute(
+                        name: "areas",
+                        template: "{area:exists}/{controller=Home}/{action=Index}"
+                    );
+                 routes.MapRoute(
+                        name: "default",
+                        template: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             /* 
              * 

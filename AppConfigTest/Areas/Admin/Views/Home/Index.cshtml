@@ -1,0 +1,25 @@
+﻿@model AppConfigTest.Areas.Admin.Models.Person[]
+
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.City</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Home" asp-area="Admin">link 1</a>
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Home" asp-area="">link 2</a>
