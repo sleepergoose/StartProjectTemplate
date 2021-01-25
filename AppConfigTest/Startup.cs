@@ -24,6 +24,8 @@ namespace AppConfigTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(prop => prop.EnableEndpointRouting = false);
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -33,6 +35,8 @@ namespace AppConfigTest
                 app.UseStatusCodePages();
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
         }
     }
