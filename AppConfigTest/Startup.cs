@@ -37,7 +37,12 @@ namespace AppConfigTest
             }
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes => {
+                routes.MapRoute(
+                        name: null,
+                        template: "{controller=Example}/{action=Index}"
+                    );
+            });
         }
     }
 }

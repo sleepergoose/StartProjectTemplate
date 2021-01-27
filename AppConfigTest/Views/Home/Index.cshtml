@@ -1,1 +1,26 @@
-﻿
+﻿@model string
+
+@{ 
+    if(Model != null)
+    {
+        <h3>name: @Model</h3>
+    }
+}
+
+<div class="container-fluid w-50">
+    <form method="post" asp-action="ReceiveForm" asp-controller="Home">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input class="form-control" type="text" name="name" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="name">City:</label>
+            <input class="form-control" type="text" name="city" value="" />
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary center-block" type="submit" value="Send" />
+        </div>
+    </form>
+</div>
