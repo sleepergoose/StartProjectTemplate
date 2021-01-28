@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Product>
+
+<p style="color:white;" class="lead p-0 m-0">HomeController: @ViewBag.HomeController</p>
+<p style="color:white;" class="lead p-0 m-0">Totalizer: @ViewBag.Totalizer</p>
+<p style="color:white;" class="lead p-0 m-0">Total: @ViewBag.Total</p>
+
+<div class="container-fluid w-50 block-center ">
+    <table class="table table-striped table-bordered ">
+        <thead class="bg-secondary">
+            <tr>
+                <th>Name</th>
+                <th class="text-center">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model == null)
+                {
+                    <tr class="bg-dark text-secondary text-center">
+                        <td colspan="2">No model data</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var p in Model)
+                    {
+                        <tr style="color: white;">
+                            <td>@p.Name</td>
+                            <td class="text-center">@p.Price</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
