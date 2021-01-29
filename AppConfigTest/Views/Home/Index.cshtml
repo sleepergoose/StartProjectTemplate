@@ -1,1 +1,32 @@
-﻿
+﻿<div class="container block-center w-50">
+    @{
+        if (Model is string)
+        {
+            <p class="p-1">
+                @Model
+            </p>
+        }
+        else if (Model is IDictionary<string, string>)
+        {
+            var dict = Model as IDictionary<string, string>;
+
+             <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th class="text-center">Value</th>
+                    </tr>
+                </thead>
+                <tbody class="text-white">
+                    @foreach (var item in dict)
+                    {
+                        <tr>
+                            <td>@item.Key</td>
+                            <td class="text-center">@item.Value</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
+</div>

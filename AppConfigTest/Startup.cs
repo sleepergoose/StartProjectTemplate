@@ -33,6 +33,7 @@ namespace AppConfigTest
                 app.UseStatusCodePages();
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
     }
