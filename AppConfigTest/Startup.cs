@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 
+using AppConfigTest.Infrastructure;
+
 namespace AppConfigTest
 {
     public class Startup
@@ -23,6 +25,8 @@ namespace AppConfigTest
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IFilterDiagnostics, DefaultFilterDiagnostics>();
+            services.AddSingleton<TimeFilter>();
             services.AddMvc(prop => prop.EnableEndpointRouting = false);
         }
 
