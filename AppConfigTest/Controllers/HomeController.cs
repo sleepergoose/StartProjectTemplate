@@ -13,15 +13,19 @@ namespace AppConfigTest.Controllers
     // [HttpsOnly] // This is my own filter defined in Infrastructure
     // [ViewResultDetails]
     // [MyResult]
-     [RangeException]
+    // [RangeException]
 
 
-    [TypeFilter(typeof(DiagnosticsFilter))]
-    //[TypeFilter(typeof(TimeFilter))]
-    [ServiceFilter(typeof(TimeFilter))]
+    // [TypeFilter(typeof(DiagnosticsFilter))]
+    // [TypeFilter(typeof(TimeFilter))]
+    // [ServiceFilter(typeof(TimeFilter))]
+
+    [Message("Controller-Scoped Filter", Order = 0)]
     public class HomeController : Controller
     {
         // [Profile] // my own attribute-filter (from Infrastructure)
+        [Message("First Action-Scoped Filter", Order = 1)]
+        [Message("Second Action-Scoped Filter", Order = -1)]
         public IActionResult Index()
         { 
             return View("Index", "This is simple Index page");

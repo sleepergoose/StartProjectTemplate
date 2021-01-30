@@ -25,9 +25,21 @@ namespace AppConfigTest
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IFilterDiagnostics, DefaultFilterDiagnostics>();
-            services.AddSingleton<TimeFilter>();
-            services.AddMvc(prop => prop.EnableEndpointRouting = false);
+            services.AddScoped<IFilterDiagnostics, DefaultFilterDiagnostics>();
+            services.AddScoped<TimeFilter>();
+            services.AddScoped<ViewResultDiagnostics>();
+            services.AddScoped<DiagnosticsFilter>();
+            services.AddScoped<MessageAttribute>();
+
+            services.AddMvc(prop => prop.EnableEndpointRouting = false)
+                .AddMvcOptions(options => {
+                    options.Filters.Add(new MessageAttribute("Globaly-Scoped Attribute") { Order = 3 });
+                });
+
+            //services.AddMvc(prop => prop.EnableEndpointRouting = false).AddMvcOptions(options => {
+            //    options.Filters.AddService(typeof(ViewResultDiagnostics));
+            //    options.Filters.AddService(typeof(DiagnosticsFilter));
+            //});
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
