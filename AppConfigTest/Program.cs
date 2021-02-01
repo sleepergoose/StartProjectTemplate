@@ -14,7 +14,7 @@ namespace AppConfigTest
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
-                .UseKestrel()
+                .UseIIS()
                 .UseContentRoot(System.IO.Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();

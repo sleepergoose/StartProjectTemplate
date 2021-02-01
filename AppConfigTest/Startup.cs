@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 
+using AppConfigTest.Models;
+
 namespace AppConfigTest
 {
     public class Startup
@@ -23,6 +25,7 @@ namespace AppConfigTest
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IRepository, MemoryRepository>();
             services.AddMvc(prop => prop.EnableEndpointRouting = false);
         }
 
