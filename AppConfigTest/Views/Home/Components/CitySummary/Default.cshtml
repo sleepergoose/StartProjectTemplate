@@ -1,0 +1,12 @@
+﻿@model CityViewModel
+
+    <table class="table table-striped">
+            <tr>
+                <th class="text-weight-bold">@nameof(Model.Cities):</th>
+                <td class="text-right">@Model.Cities</td>
+            </tr>
+            <tr>
+                <th class="text-weight-bold">@nameof(Model.Population):</th>
+                <td class="text-right">@Model.Population.ToString("#,###")</td>
+            </tr>
+    </table>

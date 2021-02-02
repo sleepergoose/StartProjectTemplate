@@ -1,1 +1,54 @@
-﻿
+﻿@model IEnumerable<Product> 
+
+@{ 
+    ViewBag.Title = "Product List";
+}
+
+<div class="container">
+    @{
+        if (Model != null)
+        {
+        <div class="w-100">
+            <table class="table table-hover table-striped table-bordered"
+                   style="margin: 0px auto;">
+                <thead class="bg-info">
+                    <tr class="text-weight-bold">
+                        <th>Name</th>
+                        <th class="text-center">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (Product p in Model)
+                        {
+                            <tr>
+                                <td>@p.Name</td>
+                                <td class="text-center">@p.Price.ToString("C2")</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="w-100 block-center text-center pt-3">
+            <a asp-action="Create" asp-controller="Home" class="btn btn-primary">Create</a>
+        </div>
+        }
+    }
+
+    <br />
+    <br />
+    <br />
+
+
+    <div class="container">
+        <div class="card-deck block-center">
+            @await Component.InvokeAsync("Cards")
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+</div>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Card>
+
+    <style>
+        .img {
+            max-width: 100%;
+            height: auto;
+            margin: 0px auto;
+            margin-bottom: 20px;
+            display: block;
+            border: 0px solid rgba(128, 128, 128, 0);
+            border-radius: 50%;
+        }
+
+        .card {
+            box-shadow: 3px 3px 13px black;
+            min-width: 250px;
+            max-width: 250px;
+            margin: 10px 10px 20px 10px;
+        }
+    </style>
+
+    @foreach (Card card in Model)
+    {
+        <div class="card block-center" style="min-width: 200px">
+            <div class="card-header">
+                <h1 class="card-title text-center">@card.Header</h1>
+            </div>
+            <div class="card-body">
+                <img src="@card.ImageSrc" class="card-img-top img" alt="@card.ImageSrc">
+                <div class="text-center">
+                    <p class="btn btn-info">Price: @card.Price.ToString("C2")</p>
+                </div>
+                <div class="text-center">
+                    <p>
+                        @card.Description
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
