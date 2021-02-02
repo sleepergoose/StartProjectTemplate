@@ -5,8 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Infrastructure\" />
     <Folder Include="Components\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="wwwroot\" />

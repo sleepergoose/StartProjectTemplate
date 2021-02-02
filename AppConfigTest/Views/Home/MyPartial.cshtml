@@ -1,0 +1,17 @@
+﻿@model string[]
+
+<div bg-primary>
+    <div>This is the message from the partial view</div>
+    <a asp-action="Index">This is a link to the Index action</a>
+</div>
+
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+        <div class="card bg-light">
+            <p class="card-title">@item</p>
+            <br />
+            <a class="btn btn-primary" asp-action=@item>@item</a>
+        </div>
+    }
+</div>

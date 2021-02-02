@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 
+using AppConfigTest.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+
 namespace AppConfigTest
 {
     public class Startup
@@ -24,6 +27,10 @@ namespace AppConfigTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(prop => prop.EnableEndpointRouting = false);
+            //services.Configure<MvcViewOptions>(options => {
+            //    options.ViewEngines.Clear();
+            //    options.ViewEngines.Insert(0, new DebugDataViewEngine());
+            //});
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
