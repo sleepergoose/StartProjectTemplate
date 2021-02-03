@@ -19,14 +19,16 @@
                 </div>
                 <div class="col-sm-5 ">
                     <div class="bg-info text-light card-body">
-                        @await Component.InvokeAsync(nameof(AppConfigTest.Components.CitySummary))
+                        @await Component.InvokeAsync("ComboComponent")
                     </div>
                 </div>
             </div>
         </div>
         <br />
         @RenderBody()
+        await Component.InvokeAsync("PageSize"); 
     </div>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

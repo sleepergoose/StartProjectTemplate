@@ -1,0 +1,17 @@
+﻿@model IEnumerable<City>
+
+<table class="table table-striped">
+    @{
+        foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Name</th>
+                <td>@item.Population</td>
+            </tr>
+        }
+        <tr>
+            <th class="text-center">Total:</th>
+            <td class="text-center">@Model.Sum(p => p.Population).ToString("#,###")</td>
+        </tr>
+    }
+</table> 

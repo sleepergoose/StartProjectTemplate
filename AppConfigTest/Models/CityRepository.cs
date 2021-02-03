@@ -18,9 +18,9 @@ namespace AppConfigTest.Models
             new City { Name = "Kharkov", Country = "Ukraine", Population = 1_547_106 },
             new City { Name = "London", Country = "England", Population = 7_908_080 },
             new City { Name = "Kyiv", Country = "Ukraine", Population = 2_507_176 },
-            new City { Name = "Berlin", Country = "Germany", Population = 3_047_116 },
+            new City { Name = "Los Angeles", Country = "USA", Population = 3_047_116 },
             new City { Name = "Paris", Country = "France", Population = 4_047_190 },
-            new City { Name = "Moscow", Country = "Russia", Population = 15_947_126 }
+            new City { Name = "Denver", Country = "USA", Population = 15_947_126 }
         };
         public IEnumerable<City> Cities => cities;
 
