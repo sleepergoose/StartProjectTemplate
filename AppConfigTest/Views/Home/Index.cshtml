@@ -1,1 +1,30 @@
 ﻿
+@model IEnumerable<City>
+
+<div class="container-fluid ">
+    <table class="table table-striped ">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (City city in Model)
+                {
+                    <tr>
+                        <td>@city.Name</td>
+                        <td>@city.Country</td>
+                        <td>@city.Population?.ToString("#,###")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a href="/Home/Create" class="btn btn-primary">Add City</a>
+    </div>
+
+</div>

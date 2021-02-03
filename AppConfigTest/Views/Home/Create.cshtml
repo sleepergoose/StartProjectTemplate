@@ -1,0 +1,22 @@
+﻿@model City
+
+    <div class="container">
+        <form action="/Home/Create" method="post">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" name="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Country">Country</label>
+                <input type="text" name="Country" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Population">Population</label>
+                <input type="text" name="Population" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Add" />
+                <a class="btn btn-default border" href="/Home/Index">Cancel</a>
+            </div>
+        </form>
+    </div>
