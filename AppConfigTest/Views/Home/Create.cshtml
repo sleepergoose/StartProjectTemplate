@@ -1,7 +1,7 @@
 ﻿@model City
 
     <div class="container">
-        <form action="/Home/Create" method="post">
+        <form  method="post">
             <div class="form-group">
                 <label for="Name">Name</label>
                 <input type="text" name="Name" class="form-control" />
@@ -15,8 +15,23 @@
                 <input type="text" name="Population" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Add" />
-                <a class="btn btn-default border" href="/Home/Index">Cancel</a>
+                <formbutton type="submit" bg-color="danger" />
+                <formbutton type="reset" href="/Home/Index" />
+                <formbutton type="button" bg-color="info" />
+                <a bs-button-color="info" href="/Home/Index">Cancel</a>
             </div>
         </form>
     </div>
+
+
+
+@{ 
+
+/*
+
+          <button type="submit" class="btn btn-primary">Add 1</button>
+            <button type="submit" bs-button-color="danger">Add 2</button>
+            <a bs-button-color="info" href ="/Home/Index">Cancel</a>
+
+*/
+}

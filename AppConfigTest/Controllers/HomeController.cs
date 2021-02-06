@@ -35,7 +35,7 @@ namespace AppConfigTest.Controllers
             }
             else
             {
-                return View(city);
+                return View();
             }
         }
     }
